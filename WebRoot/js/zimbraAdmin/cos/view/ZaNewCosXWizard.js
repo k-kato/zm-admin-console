@@ -325,6 +325,9 @@ ZaNewCosXWizard.FEATURE_TAB_ATTRS = [ZaCos.A_zimbraFeatureMailEnabled,
     ZaCos.A_zimbraFeatureFlaggingEnabled,
     ZaCos.A_zimbraImapEnabled,
     ZaCos.A_zimbraPop3Enabled,
+    ZaCos.A_zimbraFeatureWebClientEnabled,
+    ZaCos.A_zimbraFeatureChangeUseImapEnabled,
+    ZaCos.A_zimbraFeatureChangeUsePop3Enabled,
     ZaCos.A_zimbraFeatureImapDataSourceEnabled,
     ZaCos.A_zimbraFeaturePop3DataSourceEnabled,
     ZaCos.A_zimbraFeatureConversationsEnabled,
@@ -393,7 +396,9 @@ ZaNewCosXWizard.PREFERENCES_TAB_ATTRS = [
     ZaCos.A_zimbraPrefCalendarToasterEnabled,
     ZaCos.A_zimbraPrefCalendarShowPastDueReminders,
     ZaCos.A_zimbraPrefAppleIcalDelegationEnabled,
-    ZaCos.A_zimbraPrefMandatorySpellCheckEnabled
+    ZaCos.A_zimbraPrefMandatorySpellCheckEnabled,
+    ZaCos.A_zimbraPrefUseImap,
+    ZaCos.A_zimbraPrefUsePop3
 ];
 ZaNewCosXWizard.PREFERENCES_TAB_RIGHTS = [];
 
@@ -620,6 +625,9 @@ ZaNewCosXWizard.myXFormModifier = function(xFormObject, entry) {
                         ZaCos.A_zimbraFeatureFlaggingEnabled,
                         ZaCos.A_zimbraImapEnabled,
                         ZaCos.A_zimbraPop3Enabled,
+                        ZaCos.A_zimbraFeatureWebClientEnabled,
+                        ZaCos.A_zimbraFeatureChangeUseImapEnabled,
+                        ZaCos.A_zimbraFeatureChangeUsePop3Enabled,
                         ZaCos.A_zimbraFeatureImapDataSourceEnabled,
                         ZaCos.A_zimbraFeaturePop3DataSourceEnabled,
                         ZaCos.A_zimbraFeatureMailForwardingEnabled,
@@ -637,6 +645,9 @@ ZaNewCosXWizard.myXFormModifier = function(xFormObject, entry) {
                         {ref:ZaCos.A_zimbraFeatureFlaggingEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraFeatureFlaggingEnabled,label:ZaMsg.LBL_zimbraFeatureFlaggingEnabled,  trueValue:"TRUE", falseValue:"FALSE"},
                         {ref:ZaCos.A_zimbraImapEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraImapEnabled,label:ZaMsg.LBL_zimbraImapEnabled,trueValue:"TRUE", falseValue:"FALSE"},
                         {ref:ZaCos.A_zimbraPop3Enabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraPop3Enabled,label:ZaMsg.LBL_zimbraPop3Enabled,trueValue:"TRUE", falseValue:"FALSE"},
+                        {ref:ZaCos.A_zimbraFeatureWebClientEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraFeatureWebClientEnabled,label:ZaMsg.LBL_zimbraFeatureWebClientEnabled,trueValue:"TRUE", falseValue:"FALSE"},
+                        {ref:ZaCos.A_zimbraFeatureChangeUseImapEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraFeatureChangeUseImapEnabled,label:ZaMsg.LBL_zimbraFeatureChangeUseImapEnabled,trueValue:"TRUE", falseValue:"FALSE"},
+                        {ref:ZaCos.A_zimbraFeatureChangeUsePop3Enabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraFeatureChangeUsePop3Enabled,label:ZaMsg.LBL_zimbraFeatureChangeUsePop3Enabled,trueValue:"TRUE", falseValue:"FALSE"},
                         {ref:ZaCos.A_zimbraFeatureImapDataSourceEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraExternalImapEnabled,label:ZaMsg.LBL_zimbraExternalImapEnabled, trueValue:"TRUE", falseValue:"FALSE"},
                         {ref:ZaCos.A_zimbraFeaturePop3DataSourceEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraExternalPop3Enabled,label:ZaMsg.LBL_zimbraExternalPop3Enabled, trueValue:"TRUE", falseValue:"FALSE"},
                         {ref:ZaCos.A_zimbraFeatureMailForwardingEnabled, type:_WIZ_CHECKBOX_, msgName:ZaMsg.LBL_zimbraFeatureMailForwardingEnabled,label:ZaMsg.LBL_zimbraFeatureMailForwardingEnabled, trueValue:"TRUE", falseValue:"FALSE"},
@@ -976,6 +987,24 @@ ZaNewCosXWizard.myXFormModifier = function(xFormObject, entry) {
                     label:ZaMsg.LBL_zimbraPrefAutoSaveDraftInterval, labelLocation:_LEFT_,
                     onChange:ZaNewCosXWizard.validatePollingInterval,
                     labelCssStyle:"white-space:normal;",nowrap:false,labelWrap:true
+                }
+            ]},
+            {type:_ZAWIZ_TOP_GROUPER_, id:"cos_prefs_pop_imap",
+                label: ZaMsg.NAD_PopImapOptions,
+                visibilityChecks:[[ZATopGrouper_XFormItem.isGroupVisible,
+                    [
+                        ZaCos.A_zimbraPrefUseImap,
+                        ZaCos.A_zimbraPrefUsePop3
+                    ]]
+                ],
+                items :[
+                {ref:ZaCos.A_zimbraPrefUseImap, type:_WIZ_CHECKBOX_,
+                    msgName:ZaMsg.LBL_zimbraPrefUseImap,
+                    label:ZaMsg.LBL_zimbraPrefUseImap, trueValue:"TRUE", falseValue:"FALSE"
+                },
+                {ref:ZaCos.A_zimbraPrefUsePop3, type:_WIZ_CHECKBOX_,
+                    msgName:ZaMsg.LBL_zimbraPrefUsePop3,
+                    label:ZaMsg.LBL_zimbraPrefUsePop3, trueValue:"TRUE", falseValue:"FALSE"
                 }
             ]},
             {type:_ZAWIZ_TOP_GROUPER_, id:"cos_prefs_contacts_general",

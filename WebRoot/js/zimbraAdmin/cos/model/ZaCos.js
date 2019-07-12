@@ -147,6 +147,8 @@ ZaCos.A_zimbraPrefLocale = "zimbraPrefLocale" ;
 ZaCos.A_zimbraJunkMessagesIndexingEnabled = "zimbraJunkMessagesIndexingEnabled";
 ZaCos.A_zimbraPrefMailSendReadReceipts = "zimbraPrefMailSendReadReceipts";
 ZaCos.A_zimbraPrefAdminConsoleWarnOnExit = "zimbraPrefAdminConsoleWarnOnExit" ;
+ZaCos.A_zimbraPrefUseImap = "zimbraPrefUseImap";
+ZaCos.A_zimbraPrefUsePop3 = "zimbraPrefUsePop3";
 
 //features
 ZaCos.A_zimbraFeatureExportFolderEnabled = "zimbraFeatureExportFolderEnabled";
@@ -189,6 +191,9 @@ ZaCos.A_zimbraFeatureBriefcasesEnabled="zimbraFeatureBriefcasesEnabled";
 ZaCos.A_zimbraFeatureBriefcaseDocsEnabled = "zimbraFeatureBriefcaseDocsEnabled";
 ZaCos.A_zimbraImapEnabled = "zimbraImapEnabled";
 ZaCos.A_zimbraPop3Enabled = "zimbraPop3Enabled";
+ZaCos.A_zimbraFeatureWebClientEnabled = "zimbraFeatureWebClientEnabled";
+ZaCos.A_zimbraFeatureChangeUseImapEnabled = "zimbraFeatureChangeUseImapEnabled";
+ZaCos.A_zimbraFeatureChangeUsePop3Enabled = "zimbraFeatureChangeUsePop3Enabled";
 ZaCos.A_zimbraFeatureHtmlComposeEnabled = "zimbraFeatureHtmlComposeEnabled";
 ZaCos.A_zimbraFeatureGalAutoCompleteEnabled = "zimbraFeatureGalAutoCompleteEnabled";
 ZaCos.A_zimbraFeatureManageZimlets = "zimbraFeatureManageZimlets";
@@ -733,6 +738,8 @@ ZaCos.myXModel = {
         {id:ZaCos.A_zimbraPrefLocale, type: _STRING_, ref: "attrs/" + ZaCos.A_zimbraPrefLocale  },
         {id:ZaCos.A_zimbraJunkMessagesIndexingEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraJunkMessagesIndexingEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraPrefMailSendReadReceipts, choices:ZaModel.SEND_READ_RECEPIT_CHOICES, ref:"attrs/"+ZaCos.A_zimbraPrefMailSendReadReceipts, type:_ENUM_},
+        {id:ZaCos.A_zimbraPrefUseImap, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraPrefUseImap, type:_ENUM_},
+        {id:ZaCos.A_zimbraPrefUsePop3, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraPrefUsePop3, type:_ENUM_},
 //features
         {id:ZaCos.A_zimbraFeatureExportFolderEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureExportFolderEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraFeatureImportFolderEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureImportFolderEnabled, type:_ENUM_},
@@ -779,10 +786,12 @@ ZaCos.myXModel = {
         {id:ZaCos.A_zimbraFeatureBriefcasesEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureBriefcasesEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraFeatureBriefcaseDocsEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureBriefcaseDocsEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraFeatureGalAutoCompleteEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureGalAutoCompleteEnabled, type:_ENUM_},
-        {id:ZaCos.A_zimbraImapEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraImapEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraFeatureHtmlComposeEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureHtmlComposeEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraImapEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraImapEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraPop3Enabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraPop3Enabled, type:_ENUM_},
+        {id:ZaCos.A_zimbraFeatureWebClientEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureWebClientEnabled, type:_ENUM_},
+        {id:ZaCos.A_zimbraFeatureChangeUseImapEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureChangeUseImapEnabled, type:_ENUM_},
+        {id:ZaCos.A_zimbraFeatureChangeUsePop3Enabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureChangeUsePop3Enabled, type:_ENUM_},
         {id:ZaCos.A_zimbraFeatureSharingEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraFeatureSharingEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraExternalSharingEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraExternalSharingEnabled, type:_ENUM_},
         {id:ZaCos.A_zimbraPublicSharingEnabled, choices:ZaModel.BOOLEAN_CHOICES, ref:"attrs/"+ZaCos.A_zimbraPublicSharingEnabled, type:_ENUM_},

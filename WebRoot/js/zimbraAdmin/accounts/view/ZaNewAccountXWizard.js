@@ -1211,7 +1211,9 @@ ZaNewAccountXWizard.myXFormModifier = function(xFormObject, entry) {
 
         };
         if(ZAWizTopGrouper_XFormItem.isGroupVisible(entry,[ZaAccount.A_zimbraFeatureMailPriorityEnabled,ZaAccount.A_zimbraFeatureFlaggingEnabled,
-            ZaAccount.A_zimbraImapEnabled,ZaAccount.A_zimbraPop3Enabled,ZaAccount.A_zimbraFeatureImapDataSourceEnabled,
+            ZaAccount.A_zimbraImapEnabled,ZaAccount.A_zimbraPop3Enabled,
+            ZaAccount.A_zimbraFeatureWebClientEnabled,ZaAccount.A_zimbraFeatureChangeUseImapEnabled,ZaAccount.A_zimbraFeatureChangeUsePop3Enabled,
+            ZaAccount.A_zimbraFeatureImapDataSourceEnabled,
             ZaAccount.A_zimbraFeaturePop3DataSourceEnabled,ZaAccount.A_zimbraFeatureConversationsEnabled,ZaAccount.A_zimbraFeatureFiltersEnabled,
             ZaAccount.A_zimbraFeatureOutOfOfficeReplyEnabled,ZaAccount.A_zimbraFeatureNewMailNotificationEnabled,
             ZaAccount.A_zimbraFeatureMailSendLaterEnabled,ZaAccount.A_zimbraFeatureIdentitiesEnabled,ZaAccount.A_zimbraFeatureReadReceiptsEnabled],[])) {
@@ -1228,6 +1230,15 @@ ZaNewAccountXWizard.myXFormModifier = function(xFormObject, entry) {
                             {ref:ZaAccount.A_zimbraPop3Enabled, type:_SUPER_WIZ_CHECKBOX_,
                                 resetToSuperLabel:ZaMsg.NAD_ResetToCOS, msgName:ZaMsg.LBL_zimbraPop3Enabled,
                                 checkBoxLabel:ZaMsg.LBL_zimbraPop3Enabled,  trueValue:"TRUE", falseValue:"FALSE"},
+                            {ref:ZaAccount.A_zimbraFeatureWebClientEnabled, type:_SUPER_WIZ_CHECKBOX_,
+                                resetToSuperLabel:ZaMsg.NAD_ResetToCOS, msgName:ZaMsg.LBL_zimbraFeatureWebClientEnabled,
+                                checkBoxLabel:ZaMsg.LBL_zimbraFeatureWebClientEnabled,  trueValue:"TRUE", falseValue:"FALSE"},
+                            {ref:ZaAccount.A_zimbraFeatureChangeUseImapEnabled, type:_SUPER_WIZ_CHECKBOX_,
+                                resetToSuperLabel:ZaMsg.NAD_ResetToCOS, msgName:ZaMsg.LBL_zimbraFeatureChangeUseImapEnabled,
+                                checkBoxLabel:ZaMsg.LBL_zimbraFeatureChangeUseImapEnabled,  trueValue:"TRUE", falseValue:"FALSE"},
+                            {ref:ZaAccount.A_zimbraFeatureChangeUsePop3Enabled, type:_SUPER_WIZ_CHECKBOX_,
+                                resetToSuperLabel:ZaMsg.NAD_ResetToCOS, msgName:ZaMsg.LBL_zimbraFeatureChangeUsePop3Enabled,
+                                checkBoxLabel:ZaMsg.LBL_zimbraFeatureChangeUsePop3Enabled,  trueValue:"TRUE", falseValue:"FALSE"},
                             {ref:ZaAccount.A_zimbraFeatureImapDataSourceEnabled, type:_SUPER_WIZ_CHECKBOX_,
                                 resetToSuperLabel:ZaMsg.NAD_ResetToCOS, msgName:ZaMsg.LBL_zimbraExternalImapEnabled,
                                 checkBoxLabel:ZaMsg.LBL_zimbraExternalImapEnabled,  trueValue:"TRUE", falseValue:"FALSE"},
@@ -1710,6 +1721,28 @@ ZaNewAccountXWizard.myXFormModifier = function(xFormObject, entry) {
                                     nowrap:false,labelWrap:true
                                 }
                             ]
+                        });
+        }
+        if(ZAWizTopGrouper_XFormItem.isGroupVisible(entry,[ZaAccount.A_zimbraPrefUseImap,ZaAccount.A_zimbraPrefUsePop3],[])) {
+            prefItems.push(
+                        {type:_ZAWIZ_TOP_GROUPER_, id:"account_prefs_pop_imap",
+                            label:ZaMsg.NAD_PopImapOptions,
+                            items :[
+                                    {ref:ZaAccount.A_zimbraPrefUseImap, type:_SUPER_WIZ_CHECKBOX_,
+                                        colSpan:2,
+                                        colSizes:["200px", "300px", "*"],
+                                        resetToSuperLabel:ZaMsg.NAD_ResetToCOS,
+                                        msgName:ZaMsg.LBL_zimbraPrefUseImap,checkBoxLabel:ZaMsg.LBL_zimbraPrefUseImap,
+                                        trueValue:"TRUE", falseValue:"FALSE"
+                                    },
+                                    {ref:ZaAccount.A_zimbraPrefUsePop3, type:_SUPER_WIZ_CHECKBOX_,
+                                        colSpan:2,
+                                        colSizes:["200px", "300px", "*"],
+                                        resetToSuperLabel:ZaMsg.NAD_ResetToCOS,
+                                        msgName:ZaMsg.LBL_zimbraPrefUsePop3,
+                                        checkBoxLabel:ZaMsg.LBL_zimbraPrefUsePop3,
+                                        trueValue:"TRUE", falseValue:"FALSE"}
+                                    ]
                         });
         }
         if(ZAWizTopGrouper_XFormItem.isGroupVisible(entry,[ZaAccount.A_zimbraPrefAutoAddAddressEnabled,ZaAccount.A_zimbraPrefGalAutoCompleteEnabled],[])) {
